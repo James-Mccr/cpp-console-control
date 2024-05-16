@@ -20,7 +20,7 @@ Console::~Console()
 
 void Console::moveCursor(int x, int y)
 {
-    print("\033[" + std::to_string(x) + ";" + std::to_string(y) + "H");
+    move(x, y);
 }
 
 void Console::print(const char c)
