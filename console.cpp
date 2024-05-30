@@ -1,7 +1,8 @@
 #include "console.h"
 #include <curses.h>
-#include <iostream>
 #include <ncurses.h>
+#include <sys/ioctl.h>
+#include <unistd.h>
 
 Console::Console() 
 {
@@ -9,7 +10,13 @@ Console::Console()
     cbreak();
     noecho();
     nodelay(stdscr, TRUE);
+    keypad(stdscr, TRUE);
     curs_set(0);
+
+    struct winsize w;
+    ioctl(STDOUT_FILENO, TIOCGWINSZ, &w);
+    width = w.ws_col;
+    height = w.ws_row;
 }
 
 Console::~Console()
@@ -18,18 +25,24 @@ Console::~Console()
     endwin();
 }
 
-void Console::moveCursor(int x, int y)
+void Console::moveCursor(unsigned short x, unsigned short y)
 {
     move(x, y);
 }
 
 void Console::print(const char c)
 {
-    std::cout << c << std::flush;
+    addch(c);
+    refresh();
 }
 
 void Console::print(const std::string& str)
 {
-    std::cout << str << std::flush;
+    addstr(str.data());
+    refresh();
 }
 
+int Console::read()
+{
+    return getch();
+}
