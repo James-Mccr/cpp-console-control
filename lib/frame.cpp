@@ -4,7 +4,7 @@
 
 Frame::Frame(long fps) 
 {
-    milliseconds_per_frame = (60 / fps) * 1000;
+    milliseconds_per_frame = (1000 / fps);
 }
 
 void Frame::limit()
