@@ -11,7 +11,7 @@ public:
     int width{};
     int height{};
 
-    void moveCursor(unsigned short x, unsigned short y);
+    void moveCursor(unsigned short row, unsigned short column);
     void print(const char c);
     void print(const std::string& str);
     int read();

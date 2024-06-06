@@ -1,6 +1,8 @@
 #pragma once
 
-enum class UserInput { None, Left, Right, Up, Down, Quit };
+static constexpr int KEY_SPACE {' '};
+
+enum class UserInput { None, Left, Right, Up, Down, Quit, Space };
 
 class Input
 {

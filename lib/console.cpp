@@ -25,9 +25,9 @@ Console::~Console()
     endwin();
 }
 
-void Console::moveCursor(unsigned short x, unsigned short y)
+void Console::moveCursor(unsigned short row, unsigned short column)
 {
-    move(x, y);
+    move(row, column);
 }
 
 void Console::print(const char c)
