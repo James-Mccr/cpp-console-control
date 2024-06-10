@@ -14,6 +14,11 @@ void Grid::SetTile(int x, int y, char c)
     tiles[y][x] = c;
 }
 
+void Grid::SetRow(int row, const string& rowChars)
+{
+    tiles[row] = rowChars;
+}
+
 bool Grid::IsOutOfBounds(int x, int y)
 {
     return x < 0 || x >= width || y < 0 || y >= height;
