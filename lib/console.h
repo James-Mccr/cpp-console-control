@@ -14,5 +14,6 @@ public:
     void moveCursor(unsigned short row, unsigned short column);
     void print(const char c);
     void print(const std::string& str);
+    void printMiddle(const std::string& str);
     int read();
 };

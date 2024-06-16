@@ -44,6 +44,13 @@ void Console::print(const std::string& str)
     refresh();
 }
 
+void Console::printMiddle(const std::string& str)
+{
+    move(grid.GetMidHeight(), grid.GetMidWidth()-str.size()/2);
+    addstr(str.data());
+    refresh();
+}
+
 int Console::read()
 {
     return getch();
