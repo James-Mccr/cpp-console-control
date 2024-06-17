@@ -1,5 +1,7 @@
 #pragma once
 
+#include <curses.h>
+#include <ncurses.h>
 #include <string>
 
 class Console
@@ -15,5 +17,4 @@ public:
     void print(const char c);
     void print(const std::string& str);
     void printMiddle(const std::string& str);
-    int read();
 };

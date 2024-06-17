@@ -13,7 +13,8 @@ Console::Console()
     nodelay(stdscr, TRUE);
     keypad(stdscr, TRUE);
     curs_set(0);
-
+    raw();
+    
     struct winsize w;
     ioctl(STDOUT_FILENO, TIOCGWINSZ, &w);
     width = w.ws_col;
@@ -49,9 +50,4 @@ void Console::printMiddle(const std::string& str)
     move(grid.GetMidHeight(), grid.GetMidWidth()-str.size()/2);
     addstr(str.data());
     refresh();
-}
-
-int Console::read()
-{
-    return getch();
 }
