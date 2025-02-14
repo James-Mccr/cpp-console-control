@@ -15,6 +15,7 @@ public:
     void SetTile(int x, int y, char c = empty);
     void SetTiles(int x, int y, const string&& str);
     void SetRow(int y, const string& str);
+    void SetColumn(int x, const string& str);
 
     void DrawRectangle(int x1, int y1, int x2, int y2, char c);
 

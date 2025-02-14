@@ -27,6 +27,12 @@ void Grid::SetRow(int y, const string& str)
     tiles[y] = str;
 }
 
+void Grid::SetColumn(int x, const string& str)
+{
+    for (int y = 0; y < height; y++)
+        tiles[y][x] = str[y];
+}
+
 void Grid::DrawRectangle(int x1, int y1, int x2, int y2, char c)
 {
     for (int x = x1; x <= x2; x++)
