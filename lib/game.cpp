@@ -1,6 +1,9 @@
 #include "game.h"
 
-Game::Game(int fps) : frame(fps) {}
+Game::Game(int fps)
+{
+    frame = {fps};
+}
 
 Game::~Game()
 {

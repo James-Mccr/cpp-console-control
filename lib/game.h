@@ -17,7 +17,6 @@ public:
 
 protected:
     Console console{};
-    Frame frame;
     Input input{};
     Render render{console};
     bool gameOver{};
