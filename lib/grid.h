@@ -18,6 +18,10 @@ public:
     void SetColumn(int x, const string& str);
 
     void DrawRectangle(int x1, int y1, int x2, int y2, char c);
+    void DrawLine(int x1, int y1, int x2, int y2, char c);
+    void DrawTriangle(int x1, int y1, int x2, int y2, int x3, int y3, char c);
+
+    void FillTriangle(int x1, int y1, int x2, int y2, int x3, int y3, char c);
 
     bool IsOutOfBounds(int x, int y);
     bool IsCollision(int x, int y, char c);
